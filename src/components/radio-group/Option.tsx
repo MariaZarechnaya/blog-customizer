@@ -15,14 +15,11 @@ type OptionProps = {
 };
 
 export const Option = (props: OptionProps) => {
+	// принимает те пропсы которые мы передали из Радиогрупп
 	const { value, title, selected, groupName, onChange, option } = props;
-
 	const optionRef = useRef<HTMLDivElement>(null);
-
 	const handleChange = () => onChange?.(option);
-
 	useEnterSubmit({ onChange, option });
-
 	const inputId = `${groupName}_radio_item_with_value__${value}`;
 	const isChecked = value === selected.title;
 
